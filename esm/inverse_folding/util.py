@@ -34,7 +34,7 @@ def load_structure(fpath, chain=None):
     """
     if fpath.endswith('cif'):
         with open(fpath) as fin:
-            pdbxf = pdbx.PDBxFile.read(fin)
+            pdbxf = pdbx.CIFFile.read(fin)
         structure = pdbx.get_structure(pdbxf, model=1)
     elif fpath.endswith('pdb'):
         with open(fpath) as fin:
